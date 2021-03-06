@@ -8,9 +8,15 @@ class Node():
 
 class Utils(Node):
     def randomNumber(self, min=0, max=1000):
+        '''
+        Returns random integer of given range (MIN, MAX)
+        '''
         return randint(min, max) 
 
     def randomArray(self, min=0, max=1000, length=10):
+        '''
+        Returns random array of given length and range (MIN, MAX)
+        '''
         array = []
         for _ in range(length):
             array.append(self.randomNumber(min, max))
