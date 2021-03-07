@@ -2,11 +2,11 @@ from random import randint
 from random import randrange
 
 class Node():
-    def __init__(self):
-        self.val = None
-        self.next = None
+    def __init__(self, val, nxt):
+        self.val = val
+        self.nxt = nxt
 
-class Utils(Node):
+class Utils():
     def randomNumber(self, min=0, max=1000):
         '''
         Returns random integer of given range (MIN, MAX)
@@ -23,15 +23,13 @@ class Utils(Node):
 
         return array
 
-    def createRandomList(self, length, val_range=(int, int)):
+    def createRandomList(self, val_range=(0, 1000), length=10):
         '''
         Creates a Linked List of given length and range (MIN, MAX)
         '''
         first = None
         for _ in range(length):
-            temp = Node()
-            temp.val = randrange(*val_range)
-            temp.next = first
+            temp = Node(val=randrange(*val_range), nxt=first)
             first = temp
         return first
 
@@ -40,10 +38,13 @@ class Utils(Node):
         '''
         Prints given Linked List
         '''
+        if list_head == None:
+            print(None)
+            return
         print('[', end='')
-        while list_head.next != None:
+        while list_head.nxt != None:
             print(list_head.val, end=', ')
-            list_head = list_head.next
+            list_head = list_head.nxt
         print(list_head.val, end=']\n')
 
 
