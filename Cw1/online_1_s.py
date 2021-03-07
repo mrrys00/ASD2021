@@ -24,5 +24,23 @@ def bubbleSort(t):
 
     return t
 
+def bubbleSortV2(head):
+    isSorted = False
+    while not isSorted:
+        first = head
+        isSorted = True
+
+        while first.nxt != None:
+            if first.val > first.nxt.val:
+                value = first.val
+                first.val = first.nxt.val
+                first.nxt.val = value
+
+                isSorted = False
+
+            first = first.nxt
+
+    return head
+
 # t = bubbleSort([5,3,2,7,1])
 # print(t)
