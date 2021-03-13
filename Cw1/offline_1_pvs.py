@@ -2,7 +2,7 @@ from random import randint, seed
 
 
 def merge(T, l, r):
-  if (r-l) == 1: # Warunek przerwania rekurencji
+  if (r-l) <= 1: # Warunek przerwania rekurencji
     return T # Nie trzeba zwracać T
   mid = (l + r)//2 # Tablica lewa <= prawej
   merge(T, l, mid) # Rekurencja dla lewej strony 
